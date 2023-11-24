@@ -4,11 +4,14 @@ import "./App.css";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import CreateProfile from "./pages/CreateProfile";
+import AddOffer from "./pages/AddOffer";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
   const [showCreateProfile, setShowCreateProfile] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+
 
   const handleGetStartedClick = () => {
     setShowHome(false);
@@ -22,12 +25,14 @@ function App() {
   return (
     <div className="App">
       <main>
-        <div >
+        <div>
           {showHome && <Home onGetStartedClick={handleGetStartedClick} />}
           {showCreateProfile && (
             <CreateProfile onSubmit={handleCreateProfileSubmit} />
           )}
           {showWelcome && <Welcome />}
+  <SearchPage />
+          <AddOffer />
         </div>
       </main>
       {/* <footer id="footer">

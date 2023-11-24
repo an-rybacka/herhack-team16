@@ -12,7 +12,7 @@ export default function Home({ onGetStartedClick }) {
           rounded
           label="Let's get started"
           severity="primary"
-          className="m-3"
+          style={{ width: "200px" }} // Adjust the width as needed
           onClick={onGetStartedClick}
         />
       </div>
