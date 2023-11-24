@@ -3,6 +3,7 @@ import "./App.css";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import CreateProfile from "./pages/CreateProfile";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Home />
         <Welcome />
+        <CreateProfile />
       </main>
       {/* <footer id="footer">
         <Footer />
