@@ -1,8 +1,8 @@
 import "./App.css";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
-import { Button } from "primereact/button";
 
+import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -14,10 +14,15 @@ function App() {
           alt="factory"
           height="400"
         />
-        <p>hello you.</p>
-        <Home />
-        <Button label="Submit" />
       </header>
+      {/* <Header /> */}
+      <main>
+        <Home />
+        <Welcome />
+      </main>
+      {/* <footer id="footer">
+        <Footer />
+      </footer> */}
     </div>
   );
 }
