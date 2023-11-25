@@ -61,6 +61,23 @@
   margin: 1rem;
 }
 
+.buttons-homepage {
+   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto; 
+}
+
+.buttons-homepage > * {
+  flex: 1 1 calc(50% - 10px); /* Three equal-width columns with some margin between them */
+  margin: 5px;
+  
+}
+
+
+
 /* ADD OFFER */
 .offer-container {
   margin: 40px auto;
