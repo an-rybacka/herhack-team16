@@ -66,7 +66,7 @@ export default function SearchPage() {
       summary: "Success",
       detail:
         "The offer details have been successfully sent to your email address",
-      life: 5000,
+      life: 2000,
     });
   };
 

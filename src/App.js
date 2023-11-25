@@ -21,13 +21,12 @@ function App() {
     setShowHome(false);
     setshowSearchPage(false);
     setshowAddOffer(true);
-  }; 
-  
+  };
+
   const handleBrowse = () => {
     setshowSearchPage(true);
-
   };
- 
+
   return (
     <div className="App">
       <main>

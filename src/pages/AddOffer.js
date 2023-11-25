@@ -1,8 +1,10 @@
 // AddOffer.js
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
+import { Toast } from "primereact/toast";
+
 
 const materialCategories = [
   { label: "PP", value: "PP" },
@@ -32,6 +34,7 @@ const AddOffer = () => {
   const [street, setStreet] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [city, setCity] = useState("");
+  const toast = useRef(null);
 
   const handleSubmit = async () => {
     const newOffer = {
@@ -49,7 +52,7 @@ const AddOffer = () => {
 
     try {
       const response = await fetch(
-        "https://3mh16rhi84.execute-api.ap-northeast-2.amazonaws.com/default/luck4her_details",
+        "https://h4isrdfr3sq74nxxlomdjmrymu0eunme.lambda-url.ap-northeast-2.on.aws/",
         {
           method: "POST",
           headers: {
@@ -60,7 +63,14 @@ const AddOffer = () => {
       );
 
       if (response.ok) {
-        alert("Success! Data sent!");
+        console.log("Success! Data sent!");
+        // Send a confirming alert
+        toast.current.show({
+          severity: "success",
+          summary: "Success",
+          detail: "New offer was created!",
+          life: 2000,
+        });
       } else {
         console.error("Error sending offer data:", response.statusText);
         alert("Error sending offer data. Please try again.");
@@ -172,6 +182,7 @@ const AddOffer = () => {
           />
         </div>
       </div>
+      <Toast ref={toast} />
     </div>
   );
 };
