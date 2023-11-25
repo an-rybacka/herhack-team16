@@ -1,7 +1,9 @@
 // SearchPage.js
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "primereact/button";
 import "./SearchPage.css";
+import { Dialog } from "primereact/dialog";
+import { Toast } from "primereact/toast";
 
 const offers = [
   // Sample data for demonstration
@@ -35,7 +37,24 @@ const offers = [
   },
 ];
 
-const SearchPage = () => {
+export default function SearchPage() {
+  const [visible, setVisible] = useState(false);
+  //   const [selectedOffer, setSelectedOffer] = useState(null);
+  const toast = useRef(null);
+
+  const handleSendRequest = () => {
+    setVisible(false);
+
+    // Send a confirming alert
+    toast.current.show({
+      severity: "success",
+      summary: "Success",
+      detail:
+        "The offer details have been successfully sent to your email address",
+      life: 5000,
+    });
+  };
+
   return (
     <div className="search-page-container">
       <h2>What type of plastic are you interested in?</h2>
@@ -66,13 +85,38 @@ const SearchPage = () => {
                 rounded
                 label="See details"
                 className="p-button-primary"
+                onClick={() => setVisible(true)}
               />
+
+              <Dialog
+                header="Header"
+                visible={visible}
+                style={{ width: "80%" }}
+                onHide={() => setVisible(false)}
+              >
+                <div>
+                  <p className="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                  <Button
+                    rounded
+                    label="Send request email"
+                    onClick={handleSendRequest}
+                  />
+                </div>
+              </Dialog>
+              <Toast ref={toast} />
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-};
-
-export default SearchPage;
+}
