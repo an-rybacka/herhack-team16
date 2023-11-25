@@ -39,8 +39,13 @@ const offers = [
 
 export default function SearchPage() {
   const [visible, setVisible] = useState(false);
-  //   const [selectedOffer, setSelectedOffer] = useState(null);
+    const [selectedOffer, setSelectedOffer] = useState(null);
   const toast = useRef(null);
+
+    const handleSeeDetails = (offer) => {
+    setSelectedOffer(offer);
+    setVisible(true);
+  };
 
   const handleSendRequest = () => {
     setVisible(false);
@@ -85,32 +90,66 @@ export default function SearchPage() {
                 rounded
                 label="See details"
                 className="p-button-primary"
-                onClick={() => setVisible(true)}
+                              onClick={() => handleSeeDetails(offer)}
+
               />
 
               <Dialog
-                header="Header"
+                header="Offer Details"
                 visible={visible}
                 style={{ width: "80%" }}
                 onHide={() => setVisible(false)}
               >
-                <div>
-                  <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </p>
-                  <Button
-                    rounded
-                    label="Send request email"
-                    onClick={handleSendRequest}
-                  />
-                </div>
+                {selectedOffer && (
+                  <div className="dialog-content">
+                    <div className="picture-holder">
+                      {/* Placeholder for picture */}
+                    </div>{" "}
+                    <div className="offer-details">
+                      <p className="m-0">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                      </p>
+
+                      <div className="detail">
+                        Company: {selectedOffer.company_name}
+                      </div>
+                      <div className="detail">Email: {selectedOffer.email}</div>
+                      <div className="detail">
+                        Material: {selectedOffer.material_cat}
+                      </div>
+                      <div className="detail">
+                        Product: {selectedOffer.product_cat}
+                      </div>
+                      <div className="detail">Color: {selectedOffer.color}</div>
+                      <div className="detail">
+                        Weight: {selectedOffer.weight} lbs
+                      </div>
+                      <div className="detail">
+                        Street: {selectedOffer.street}
+                      </div>
+                      <div className="detail">
+                        Zip Code: {selectedOffer.zip_code}
+                      </div>
+                      <div className="detail">
+                        Canton: {selectedOffer.canton}
+                      </div>
+                      <div className="detail">City: {selectedOffer.city}</div>
+                      <Button
+                        rounded
+                        label="Send request email"
+                        onClick={handleSendRequest}
+                      />
+                    </div>
+                  </div>
+                )}
               </Dialog>
               <Toast ref={toast} />
             </div>
