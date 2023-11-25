@@ -10,13 +10,23 @@ const offers = [
   {
     company_name: "Prodex Technologie AG",
     email: "prodextechnologie@example.com",
-    material_cat: "PVC",
-    product_cat: "Bags",
+    material_cat: "PET",
+    product_cat: "Bottles",
     color: "brown",
     weight: "2300",
     street: "Prodex Technologie Street",
     zip_code: "8010",
-    canton: "Zurich",
+    city: "Solothurn",
+  },
+  {
+    company_name: "Coca Cola",
+    email: "cocacola@example.com",
+    material_cat: "LDPE",
+    product_cat: "Construction",
+    color: "brown",
+    weight: "2300",
+    street: "Langstrasse",
+    zip_code: "8010",
     city: "Zurich",
   },
   {
@@ -28,34 +38,69 @@ const offers = [
     weight: "1800",
     street: "Eco-Fashion Avenue",
     zip_code: "9000",
-    canton: "St. Gallen",
     city: "St. Gallen",
   },
   {
-    material_cat: "PET",
-    product_cat: "Bottles",
-    color: "Transparent",
-    weight: 50,
-    city: "Zürich",
+    company_name: "Sika Schweiz AG",
+    email: "sikaschweiz@example.com",
+    material_cat: "PS",
+    product_cat: "Clothing",
+    color: "blue",
+    weight: "1300",
+    street: "Sika Lane",
+    zip_code: "8005",
+    city: "Zurich",
   },
   {
+    company_name: "Evian AG",
+    email: "evian@example.com",
+    material_cat: "PET",
+    product_cat: "Bottles",
+    color: "transparent",
+    weight: "2300",
+    street: "Water Street",
+    zip_code: "8010",
+    city: "Geneva",
+  },
+  {
+    company_name: "Sika Schweiz AG",
     material_cat: "HDPE",
     product_cat: "Containers",
     color: "Blue",
     weight: 30,
     city: "Aarau",
   },
+  {
+    company_name: "SVG AG",
+    email: "SVG@example.com",
+    material_cat: "LDPE",
+    product_cat: "Construction",
+    color: "red",
+    weight: "2300",
+    street: "Langstrasse",
+    zip_code: "8010",
+    city: "Brugg",
+  },
+  {
+    company_name: "Boston Robotics",
+    email: "boston@example.com",
+    material_cat: "Others",
+    product_cat: "Construction",
+    color: "red",
+    weight: "2300",
+    street: "Thujastrasse 23",
+    zip_code: "8010",
+    city: "Bern",
+  },
 ];
-
-
 
 export default function SearchPage() {
   const [visible, setVisible] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState(null);
   const toast = useRef(null);
-    const searchPageRef = useRef(null);
+  const searchPageRef = useRef(null);
 
-useEffect(() => {
+  useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (searchPageRef.current) {
         searchPageRef.current.scrollIntoView({ behavior: "smooth" });
@@ -108,7 +153,7 @@ useEffect(() => {
               <div className="detail">Material: {offer.material_cat}</div>
               <div className="detail">Product: {offer.product_cat}</div>
               <div className="detail">Color: {offer.color}</div>
-              <div className="detail">Weight: {offer.weight} lbs</div>
+              <div className="detail">Weight: {offer.weight} kg</div>
               <div className="detail">City: {offer.city}</div>
               <Button
                 rounded

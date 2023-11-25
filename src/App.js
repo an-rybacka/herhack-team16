@@ -30,11 +30,12 @@ function App() {
       const response = await fetch(
         "https://oc7ax6ozx7o5r3ygnr4xupzm4e0mxmph.lambda-url.ap-northeast-2.on.aws/"
       );
-      console.log(response);
+      console.log(response.body);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+
   function handleCancelOffer() {
     setShowHome(true);
     setshowSearchPage(false);
