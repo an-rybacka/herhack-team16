@@ -12,31 +12,25 @@
   top: 0;
   left: 0;
   width: 100%;
+  max-height: 200px;
 }
 
-.factory {
-  /* z-index: 1000; */
-
-  max-width: 100%;
-  height: auto;
+.header-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
 }
 
-.page-container {
-  margin: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  max-width: 800px;
-}
+
 
 .home-container {
   margin: 60px auto;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 80%; /* Set the width to 80% of the screen */
+
   height: 40vh; /* Set the container to take the full height of the viewport */
   text-align: center;
 }
@@ -51,4 +45,44 @@
 
 .home-container button {
   margin: 1rem;
+}
+
+
+
+/* styles.css */
+.offer-container {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+.offer-container label {
+  margin-bottom: 8px;
+}
+
+.offer-container .p-field {
+  margin-bottom: 16px;
+}
+
+.offer-container .p-grid {
+  width: 100%;
+}
+
+.offer-container .p-col-12 {
+  width: 100%;
+}
+
+.offer-container .p-col-6 {
+  width: 48%;
+}
+
+.offer-container .p-mb-2 {
+  margin-bottom: 16px;
 }

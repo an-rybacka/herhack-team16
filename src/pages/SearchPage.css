@@ -1,0 +1,50 @@
+/* styles.css */
+.search-page-container {
+  padding: 20px;
+}
+
+.plastic-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.offer-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.offer-card {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.picture-holder {
+  /* Add styles for picture placeholder */
+  width: 150px;
+  height: 100%;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.plastic-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.offer-details {
+  flex: 1;
+}
+
+.detail {
+  margin-bottom: 8px;
+}
+
