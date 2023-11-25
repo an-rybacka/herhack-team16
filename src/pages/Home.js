@@ -1,10 +1,16 @@
 import { Button } from "primereact/button";
-import Header from "../components/Header";
 
 export default function Home({ onGetStartedClick }) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
+      <header className="App-header">
+        <img
+          src="./images/plastic-pet2.jpg"
+          className="header-image"
+          alt="factory"
+        />
+      </header>
       <div className="home-container">
         <h2>Welcome to the Plastic Waste Marketplace</h2>
         <p>Buy and sell plastic waste with ease</p>

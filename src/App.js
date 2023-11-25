@@ -3,23 +3,21 @@ import "./App.css";
 
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
-import CreateProfile from "./pages/CreateProfile";
 import AddOffer from "./pages/AddOffer";
 import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
-  const [showCreateProfile, setShowCreateProfile] = useState(false);
+  const [showSearchPage, setshowSearchPage] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
-
 
   const handleGetStartedClick = () => {
     setShowHome(false);
-    setShowCreateProfile(true);
+    setshowSearchPage(true);
   };
 
   const handleCreateProfileSubmit = () => {
-    setShowCreateProfile(false);
+    setshowSearchPage(false);
     setShowWelcome(true);
   };
   return (
@@ -27,11 +25,10 @@ function App() {
       <main>
         <div>
           {showHome && <Home onGetStartedClick={handleGetStartedClick} />}
-          {showCreateProfile && (
-            <CreateProfile onSubmit={handleCreateProfileSubmit} />
+          {showSearchPage && (
+            <SearchPage onSubmit={handleCreateProfileSubmit} />
           )}
           {showWelcome && <Welcome />}
-  <SearchPage />
           <AddOffer />
         </div>
       </main>

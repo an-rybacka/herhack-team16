@@ -15,22 +15,13 @@
   max-height: 200px;
 }
 
-.factory {
-  /* z-index: 1000; */
-
-  max-width: 100%;
-  height: auto;
+.header-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
 }
 
-.page-container {
-  margin: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  max-width: 800px;
-}
+
 
 .home-container {
   margin: 60px auto;
