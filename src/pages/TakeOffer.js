@@ -28,7 +28,7 @@ const colors = [
   { label: "Other", value: "other" },
 ];
 
-const AddOffer = ({ onCancelOffer }) => {
+export default function TakeOffer({ onCancelOffer }) {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [materialCat, setMaterialCat] = useState("");
@@ -42,7 +42,7 @@ const AddOffer = ({ onCancelOffer }) => {
 
   async function handleSubmit() {
     const newOffer = {
-      buyer_or_seller: "Seller",
+      buyer_or_seller: "Buyer",
       company_name: companyName,
       email: email,
       material_cat: materialCat,
@@ -199,4 +199,3 @@ const AddOffer = ({ onCancelOffer }) => {
   );
 };
 
-export default AddOffer;

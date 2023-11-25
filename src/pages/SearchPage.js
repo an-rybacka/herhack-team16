@@ -1,4 +1,3 @@
-// SearchPage.js
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "primereact/button";
 import "./SearchPage.css";

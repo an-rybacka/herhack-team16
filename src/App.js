@@ -1,26 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import AddOffer from "./pages/AddOffer";
+import TakeOffer from "./pages/TakeOffer";
 import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
   const [showSearchPage, setshowSearchPage] = useState(false);
   const [showAddOffer, setshowAddOffer] = useState(false);
-  const searchPageRef = useRef(null);
+  const [showTakeOffer, setshowTakeOffer] = useState(false);
 
-  useEffect(() => {
-    // Scroll to the SearchPage component after it is mounted
-    if (showSearchPage && searchPageRef.current) {
-      searchPageRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [showSearchPage]);
+  const searchPageRef = useRef(null);
 
   const handleAddOffer = () => {
     setShowHome(false);
     setshowSearchPage(false);
     setshowAddOffer(true);
+  };
+
+  const handleTakeOffer = () => {
+    setShowHome(false);
+    setshowSearchPage(false);
+    setshowTakeOffer(true);
   };
 
   const handleBrowse = async () => {
@@ -40,6 +42,7 @@ function App() {
     setShowHome(true);
     setshowSearchPage(false);
     setshowAddOffer(false);
+    setshowTakeOffer(false);
   }
 
   return (
@@ -47,10 +50,15 @@ function App() {
       <main>
         <div>
           {showHome && (
-            <Home onAddOffer={handleAddOffer} onBrowse={handleBrowse} />
+            <Home
+              onAddOffer={handleAddOffer}
+              onBrowse={handleBrowse}
+              onTakeOffer={handleTakeOffer}
+            />
           )}
           {showSearchPage && <SearchPage />}
           {showAddOffer && <AddOffer onCancelOffer={handleCancelOffer} />}
+          {showTakeOffer && <TakeOffer onCancelOffer={handleCancelOffer} />}
         </div>
       </main>
     </div>
