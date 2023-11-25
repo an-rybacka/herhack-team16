@@ -53,14 +53,14 @@ const SearchPage = () => {
         {offers.map((offer, index) => (
           <div className="offer-card" key={index}>
             <div className="picture-holder">
-              {" "}
+              
               {/* Placeholder for picture */}
             </div>
             <div className="offer-details">
               <div className="detail">Material: {offer.material_cat}</div>
               <div className="detail">Product: {offer.product_cat}</div>
               <div className="detail">Color: {offer.color}</div>
-              <div className="detail">Weight: {offer.weight} lbs</div>
+              <div className="detail">Weight: {offer.weight} kg</div>
               <div className="detail">City: {offer.city}</div>
               <Button
                 rounded

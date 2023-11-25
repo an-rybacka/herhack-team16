@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
+import "primeicons/primeicons.css";
 
 const materialCategories = [
   { label: "PP", value: "PP" },
@@ -49,7 +50,7 @@ const AddOffer = () => {
 
     try {
       const response = await fetch(
-        "https://3mh16rhi84.execute-api.ap-northeast-2.amazonaws.com/default/luck4her_details",
+        "https://h4isrdfr3sq74nxxlomdjmrymu0eunme.lambda-url.ap-northeast-2.on.aws/",
         {
           method: "POST",
           headers: {
