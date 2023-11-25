@@ -47,10 +47,9 @@ export default function Home({ onAddOffer, onBrowse, onTakeOffer }) {
       </div>
       <div className="bottom">
         {showDoubleArrow && (
-          <Button
-            icon="pi pi-arrow-down"
-            className="p-button-secondary p-button-outlined double-arrow-icon"
-          />
+          <span class="material-symbols-outlined">
+            keyboard_double_arrow_down
+          </span>
         )}
       </div>
     </div>

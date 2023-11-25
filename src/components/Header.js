@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="App-header">
       <img
-        src="./images/plastic-pet2.jpg"
+        src="./images/logo-color.png"
         className="header-image"
         alt="factory"
       />

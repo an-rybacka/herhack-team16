@@ -217,6 +217,7 @@ export default function SearchPage() {
                     {/* <div className="picture-holder">
                       {/* Placeholder for picture 
                     </div>{" "} */}
+                    
                     <div className="offer-details">
                       <p className="m-0">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
