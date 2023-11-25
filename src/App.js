@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
-
 import Home from "./pages/Home";
 import AddOffer from "./pages/AddOffer";
 import SearchPage from "./pages/SearchPage";
