@@ -61,7 +61,7 @@
   margin: 1rem;
 }
 
-/* styles.css */
+/* ADD OFFER */
 .offer-container {
   margin: 40px auto;
   display: flex;
@@ -97,4 +97,10 @@
 
 .offer-container .p-mb-2 {
   margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .offer-container {
+    margin: 0; /* Remove margins on mobile devices */
+  }
 }

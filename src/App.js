@@ -23,9 +23,23 @@ function App() {
     setshowAddOffer(true);
   };
 
-  const handleBrowse = () => {
+  const handleBrowse = async () => {
     setshowSearchPage(true);
+
+    try {
+      const response = await fetch(
+        "https://oc7ax6ozx7o5r3ygnr4xupzm4e0mxmph.lambda-url.ap-northeast-2.on.aws/"
+      );
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
+  function handleCancelOffer() {
+    setShowHome(true);
+    setshowSearchPage(false);
+    setshowAddOffer(false);
+  }
 
   return (
     <div className="App">
@@ -35,7 +49,7 @@ function App() {
             <Home onAddOffer={handleAddOffer} onBrowse={handleBrowse} />
           )}
           {showSearchPage && <SearchPage />}
-          {showAddOffer && <AddOffer />}
+          {showAddOffer && <AddOffer onCancelOffer={handleCancelOffer} />}
         </div>
       </main>
     </div>

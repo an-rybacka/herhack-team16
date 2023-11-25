@@ -1,5 +1,5 @@
 // SearchPage.js
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "primereact/button";
 import "./SearchPage.css";
 import { Dialog } from "primereact/dialog";
@@ -47,11 +47,25 @@ const offers = [
   },
 ];
 
+
+
 export default function SearchPage() {
   const [visible, setVisible] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState(null);
   const toast = useRef(null);
+    const searchPageRef = useRef(null);
 
+useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (searchPageRef.current) {
+        searchPageRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
+
+    return () => clearTimeout(timeoutId); // Clean up the timeout on component unmount
+
+    // Dependency array is intentionally empty as we only want to run this effect once on mount
+  }, []);
   const handleSeeDetails = (offer) => {
     setSelectedOffer(offer);
     setVisible(true);
@@ -72,7 +86,7 @@ export default function SearchPage() {
 
   return (
     <div className="search-page-container">
-      <h2>What type of plastic are you interested in?</h2>
+      <h2 id="searchpageid">What type of plastic are you interested in?</h2>
       <div className="plastic-buttons">
         <Button rounded label="PET" className="p-button-secondary" />
         <Button rounded label="HDPE" className="p-button-secondary" />

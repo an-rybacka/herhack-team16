@@ -5,11 +5,14 @@ import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 
-
 const materialCategories = [
   { label: "PP", value: "PP" },
   { label: "HDPE", value: "HDPE" },
   { label: "LDPE", value: "LDPE" },
+  { label: "PET", value: "PET" },
+  { label: "PVC", value: "PVC" },
+  { label: "PS", value: "PS" },
+  { label: "Other", value: "Other" },
 ];
 
 const productCategories = [
@@ -22,9 +25,11 @@ const colors = [
   { label: "Transparent", value: "transparent" },
   { label: "Red", value: "red" },
   { label: "Blue", value: "blue" },
+  { label: "Green", value: "green" },
+  { label: "Other", value: "other" },
 ];
 
-const AddOffer = () => {
+const AddOffer = ({ onCancelOffer }) => {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [materialCat, setMaterialCat] = useState("");
@@ -36,7 +41,7 @@ const AddOffer = () => {
   const [city, setCity] = useState("");
   const toast = useRef(null);
 
-  const handleSubmit = async () => {
+  async function handleSubmit() {
     const newOffer = {
       buyer_or_seller: "Seller",
       company_name: companyName,
@@ -79,11 +84,11 @@ const AddOffer = () => {
       console.error("Error sending offer data:", error);
       alert("Error sending offer data. Please try again.");
     }
-  };
+  }
 
   return (
     <div className="offer-container p-rounded">
-      <h2>Add Offer</h2>
+      <h2>Create an Offer</h2>
       <div className="p-grid p-fluid">
         <div className="p-col-12 p-mb-2">
           <label htmlFor="companyName">Company Name</label>
@@ -178,7 +183,15 @@ const AddOffer = () => {
             rounded
             label="Submit"
             className="m-3"
+            style={{ marginBottom: "20px" }}
             onClick={handleSubmit}
+          />
+
+          <Button
+            rounded
+            label="Cancel"
+            className="p-button-secondary"
+            onClick={() => onCancelOffer()}
           />
         </div>
       </div>
