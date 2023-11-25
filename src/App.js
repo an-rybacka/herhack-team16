@@ -21,8 +21,8 @@ function App() {
 
   const handleAddOffer = () => {
     setShowHome(false);
+    setshowSearchPage(false);
     setshowAddOffer(true);
-    console.log("offer clicked");
   };
   return (
     <div className="App">
