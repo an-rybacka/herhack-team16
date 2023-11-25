@@ -6,33 +6,47 @@
   height: 40vmin;
   pointer-events: none;
 }
+.header-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .App-header {
-  position: relative;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
   max-height: 200px;
 }
 
 .header-image {
-  width: 100%;
   max-height: 300px;
+  width: 100%;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
-
-
 .home-container {
-  margin: 60px auto;
+  /* margin: 60px auto;
   display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%; /* Set the width to 80% of the screen */
-
-  height: 40vh; /* Set the container to take the full height of the viewport */
+  width: 80%; 
+  height: 40vh; 
+  text-align: center; */
+  position: relative;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .home-container h2 {
@@ -46,8 +60,6 @@
 .home-container button {
   margin: 1rem;
 }
-
-
 
 /* styles.css */
 .offer-container {
