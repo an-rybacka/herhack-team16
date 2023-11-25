@@ -8,18 +8,28 @@ import { Toast } from "primereact/toast";
 const offers = [
   // Sample data for demonstration
   {
-    material_cat: "PET",
-    product_cat: "Bottles",
-    color: "Red",
-    weight: 50,
-    city: "Baden",
+    company_name: "Prodex Technologie AG",
+    email: "prodextechnologie@example.com",
+    material_cat: "PVC",
+    product_cat: "Bags",
+    color: "brown",
+    weight: "2300",
+    street: "Prodex Technologie Street",
+    zip_code: "8010",
+    canton: "Zurich",
+    city: "Zurich",
   },
   {
-    material_cat: "HDPE",
-    product_cat: "Containers",
-    color: "Blue",
-    weight: 30,
-    city: "Brugg",
+    company_name: "GreenWave SA",
+    email: "greenwave@example.com",
+    material_cat: "PVC",
+    product_cat: "Inflatable structures",
+    color: "transparent",
+    weight: "1800",
+    street: "Eco-Fashion Avenue",
+    zip_code: "9000",
+    canton: "St. Gallen",
+    city: "St. Gallen",
   },
   {
     material_cat: "PET",
@@ -39,10 +49,10 @@ const offers = [
 
 export default function SearchPage() {
   const [visible, setVisible] = useState(false);
-    const [selectedOffer, setSelectedOffer] = useState(null);
+  const [selectedOffer, setSelectedOffer] = useState(null);
   const toast = useRef(null);
 
-    const handleSeeDetails = (offer) => {
+  const handleSeeDetails = (offer) => {
     setSelectedOffer(offer);
     setVisible(true);
   };
@@ -90,8 +100,7 @@ export default function SearchPage() {
                 rounded
                 label="See details"
                 className="p-button-primary"
-                              onClick={() => handleSeeDetails(offer)}
-
+                onClick={() => handleSeeDetails(offer)}
               />
 
               <Dialog
@@ -102,9 +111,9 @@ export default function SearchPage() {
               >
                 {selectedOffer && (
                   <div className="dialog-content">
-                    <div className="picture-holder">
-                      {/* Placeholder for picture */}
-                    </div>{" "}
+                    {/* <div className="picture-holder">
+                      {/* Placeholder for picture 
+                    </div>{" "} */}
                     <div className="offer-details">
                       <p className="m-0">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,

@@ -28,16 +28,18 @@
   /* Add styles for picture placeholder */
   width: 150px;
   height: 100%;
-  background-color: #eee;
+  background-color: #eeeeee;
   border-radius: 4px;
   margin-right: 10px;
 }
+
 
 .plastic-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 .offer-details {
@@ -45,6 +47,18 @@
 }
 
 .detail {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
+.dialog-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.offer-details {
+  display: flex;
+  flex-direction: column;
+}
