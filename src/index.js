@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "primereact/resources/themes/saga-blue/theme.css"; // Choose a theme
+import "primereact/resources/themes/soho-light/theme.css"; // Choose a theme
+// import "primereact/resources/themes/saga-blue/theme.css"; // Choose a theme
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 

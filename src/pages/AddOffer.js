@@ -189,7 +189,7 @@ const AddOffer = ({ onCancelOffer }) => {
           <Button
             rounded
             label="Cancel"
-            className="p-button-secondary"
+            className="p-button-warning"
             onClick={() => onCancelOffer()}
           />
         </div>

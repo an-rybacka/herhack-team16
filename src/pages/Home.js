@@ -35,7 +35,7 @@ export default function Home({ onAddOffer, onBrowse, onTakeOffer }) {
             <Button
               rounded
               label="Browse available offers"
-              severity="secondary"
+              severity="warning"
               style={{ padding: "15px 30px", margin: "5px" , marginTop: "10px" }}
               onClick={onBrowse}
             />

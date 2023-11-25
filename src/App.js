@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
+import "./theme.css";
 import Home from "./pages/Home";
 import AddOffer from "./pages/AddOffer";
 import TakeOffer from "./pages/TakeOffer";
