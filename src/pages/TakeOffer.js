@@ -73,7 +73,7 @@ export default function TakeOffer({ onCancelOffer }) {
           severity: "success",
           summary: "Success",
           detail: "New offer was created!",
-          life: 2000,
+          life: 3000,
         });
       } else {
         console.error("Error sending offer data:", response.statusText);

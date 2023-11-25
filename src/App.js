@@ -12,6 +12,7 @@ function App() {
   const [showAddOffer, setshowAddOffer] = useState(false);
   const [showTakeOffer, setshowTakeOffer] = useState(false);
 
+
   const searchPageRef = useRef(null);
 
   const handleAddOffer = () => {
@@ -28,6 +29,7 @@ function App() {
 
   const handleBrowse = async () => {
     setshowSearchPage(true);
+    // setShowDoubleArrow(true);
 
     try {
       const response = await fetch(
@@ -44,6 +46,7 @@ function App() {
     setshowSearchPage(false);
     setshowAddOffer(false);
     setshowTakeOffer(false);
+    // setShowDoubleArrow(false);
   }
 
   return (

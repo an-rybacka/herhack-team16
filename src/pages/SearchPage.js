@@ -133,8 +133,8 @@ export default function SearchPage() {
       severity: "success",
       summary: "Success",
       detail:
-        "The offer details have been successfully sent to your email address",
-      life: 2000,
+        "Thank you for your interest! You will be contacted with the vendor promtply.",
+      life: 3000,
     });
   };
 
