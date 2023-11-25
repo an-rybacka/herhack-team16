@@ -97,6 +97,7 @@ const offers = [
 export default function SearchPage() {
   const [visible, setVisible] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState(null);
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
   const toast = useRef(null);
   const searchPageRef = useRef(null);
 
@@ -116,6 +117,15 @@ export default function SearchPage() {
     setVisible(true);
   };
 
+  const handleMaterialButtonClick = (material) => {
+    setSelectedMaterial(material);
+  };
+
+  // Use the selectedMaterial to filter offers
+  const filteredOffers = selectedMaterial
+    ? offers.filter((offer) => offer.material_cat === selectedMaterial)
+    : offers;
+
   const handleSendRequest = () => {
     setVisible(false);
 
@@ -131,19 +141,54 @@ export default function SearchPage() {
 
   return (
     <div className="search-page-container">
-      <h2 id="searchpageid">What type of plastic are you interested in?</h2>
+      <h2>What type of plastic are you interested in?</h2>
       <div className="plastic-buttons">
-        <Button rounded label="PET" className="p-button-secondary" />
-        <Button rounded label="HDPE" className="p-button-secondary" />
-        <Button rounded label="PVC" className="p-button-secondary" />
-        <Button rounded label="LDPE" className="p-button-secondary" />
-        <Button rounded label="PP" className="p-button-secondary" />
-        <Button rounded label="PS" className="p-button-secondary" />
-        <Button rounded label="Other" className="p-button-secondary" />
+        <Button
+          rounded
+          label="PET"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("PET")}
+        />
+        <Button
+          rounded
+          label="HDPE"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("HDPE")}
+        />
+        <Button
+          rounded
+          label="PVC"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("PVC")}
+        />
+        <Button
+          rounded
+          label="LDPE"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("LDPE")}
+        />
+        <Button
+          rounded
+          label="PP"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("PP")}
+        />
+        <Button
+          rounded
+          label="PS"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("PS")}
+        />
+        <Button
+          rounded
+          label="Other"
+          className="p-button-secondary"
+          onClick={() => handleMaterialButtonClick("Other")}
+        />
       </div>
 
       <div className="offer-cards">
-        {offers.map((offer, index) => (
+        {filteredOffers.map((offer, index) => (
           <div className="offer-card" key={index}>
             <div className="picture-holder">
               {" "}
