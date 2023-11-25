@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 
-import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import AddOffer from "./pages/AddOffer";
 import SearchPage from "./pages/SearchPage";
@@ -9,32 +8,33 @@ import SearchPage from "./pages/SearchPage";
 function App() {
   const [showHome, setShowHome] = useState(true);
   const [showSearchPage, setshowSearchPage] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
+  const [showAddOffer, setshowAddOffer] = useState(false);
+  const searchPageRef = useRef(null);
 
-  const handleGetStartedClick = () => {
-    setShowHome(false);
+  const handleBrowse = () => {
     setshowSearchPage(true);
+    // Scroll to the SearchPage component
+    if (searchPageRef.current) {
+      searchPageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const handleCreateProfileSubmit = () => {
-    setshowSearchPage(false);
-    setShowWelcome(true);
+  const handleAddOffer = () => {
+    setShowHome(false);
+    setshowAddOffer(true);
+    console.log("offer clicked");
   };
   return (
     <div className="App">
       <main>
         <div>
-          {showHome && <Home onGetStartedClick={handleGetStartedClick} />}
-          {showSearchPage && (
-            <SearchPage onSubmit={handleCreateProfileSubmit} />
+          {showHome && (
+            <Home onAddOffer={handleAddOffer} onBrowse={handleBrowse} />
           )}
-          {showWelcome && <Welcome />}
-          <AddOffer />
+          {showSearchPage && <SearchPage />}
+          {showAddOffer && <AddOffer />}
         </div>
       </main>
-      {/* <footer id="footer">
-        <Footer />
-      </footer> */}
     </div>
   );
 }
