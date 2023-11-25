@@ -3,9 +3,8 @@ export default function Header() {
     <header className="App-header">
       <img
         src="./images/plastic-pet2.jpg"
-        className="factory"
+        className="header-image"
         alt="factory"
-        height="400"
       />
     </header>
   );
